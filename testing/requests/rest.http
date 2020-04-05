@@ -1,0 +1,27 @@
+############################################################
+@local = https://localhost:6969
+@deployed = https://program-manager-backend.auroxtech.com
+
+############################################################
+POST {{deployed}}/loadProgramData
+content-type: application/json
+
+{
+    "a": "a"
+}
+
+############################################################
+POST {{local}}/loadLangStrings
+content-type: application/json
+
+{
+    "a": "a"
+}
+
+###
+POST {{local}}/loadProgramData
+content-type: application/json
+
+{
+    "a": "a"
+}
