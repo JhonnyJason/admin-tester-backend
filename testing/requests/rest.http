@@ -1,9 +1,9 @@
 ############################################################
 @local = https://localhost:6969
-@deployed = https://program-manager-backend.auroxtech.com
+@deployed = https://
 
 ############################################################
-POST {{deployed}}/loadProgramData
+POST {{deployed}}/...
 content-type: application/json
 
 {
@@ -11,17 +11,49 @@ content-type: application/json
 }
 
 ############################################################
-POST {{local}}/loadLangStrings
+POST {{local}}/login
 content-type: application/json
 
 {
-    "a": "a"
+    "secret": "defaultsecret"
 }
 
 ###
-POST {{local}}/loadProgramData
+POST {{local}}/login
 content-type: application/json
 
 {
-    "a": "a"
+    "secret": "wrongsecret"
 }
+
+###
+POST {{local}}/tokenCheck
+content-type: application/json
+
+{
+    "token": "iKGpmkRdqc5wrYfhoBJ8"
+}
+
+###
+POST {{local}}/update
+content-type: application/json
+
+{
+    "token": "iKGpmkRdqc5wrYfhoBJ8"
+}
+
+###
+POST {{local}}/discard
+content-type: application/json
+
+{
+    "token": "iKGpmkRdqc5wrYfhoBJ8"
+}
+
+###
+POST {{local}}/apply
+content-type: application/json
+
+{
+    "token": "iKGpmkRdqc5wrYfhoBJ8"
+}k
